@@ -4,6 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class SimpleDemoApiWrapper {
     private static Retrofit retrofit;
@@ -18,8 +19,10 @@ public class SimpleDemoApiWrapper {
                     .writeTimeout(50,TimeUnit.SECONDS)
                     .connectTimeout(1,TimeUnit.MINUTES)
                     .build();
+
             retrofit = new Retrofit.Builder()
                     .baseUrl(BASE_URL)
+                    .addConverterFactory(GsonConverterFactory.create())
                     .client(okHttpClient)
                     .build();
         }
