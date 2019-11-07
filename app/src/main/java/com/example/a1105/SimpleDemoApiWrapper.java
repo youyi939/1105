@@ -9,8 +9,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class SimpleDemoApiWrapper {
     private static Retrofit retrofit;
     private static final String BASE_URL = "https://api.myjson.com/";
-    public static Retrofit getRetrofitInstance(){
 
+    public static Retrofit getRetrofitInstance(){
 
         if (retrofit == null){
 
@@ -24,6 +24,7 @@ public class SimpleDemoApiWrapper {
                     .baseUrl(BASE_URL)
                     .addConverterFactory(GsonConverterFactory.create())
                     .client(okHttpClient)
+
                     .build();
         }
 

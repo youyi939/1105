@@ -7,7 +7,7 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 
 public interface SimpleDemoApiService {
-    @GET("bins/8ru3p")
+    @GET("bins/1bcga4")
     Call<ResponseBody>getJereChenBlog();
 
 }
